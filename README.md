@@ -1,21 +1,18 @@
 # meteor-marked
 
 > A Meteor package that reads .md (Markdown) files and dynamically converts them into meteor/handlebars templates.
-> An [Atmosphere](https://atmosphere.meteor.com/) managed package.
 
 ## Install
 
-Use [Meteorite](http://oortcloud.github.io/meteorite/) to install. Follow the directions there on how to create a Meteorite managed application.
-
 ``` bash
-mrt add markd
+meteor add markd
 ```
 
 ## Usage
 
 Once installed you can add .md files to your Meteor application and they will be converted to templates.
 
-The standard default template that is generated when you create a Meteor app can be used as an example. 
+The standard default template that is generated when you create a Meteor app can be used as an example.
 
 Move the template code to a new file, delete the `<template>` tags and name it hello.md (the filename is used to generate the template name).
 

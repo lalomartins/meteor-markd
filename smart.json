@@ -1,9 +1,0 @@
-{
-  "name": "markd",
-  "description": "Creates js templates of your markdown files",
-  "author": "Darren Pearce (https://github.com/limeyd)",
-  "homepage": "https://github.com/limeyd/meteor-markd",
-  "version": "0.0.3",
-  "git": "https://github.com/limeyd/meteor-markd.git",
-  "packages": {}
-}

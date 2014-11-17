@@ -4,17 +4,10 @@ var marked = Npm.require('marked');
 var Future = Npm.require('fibers/future');
 
 Plugin.registerSourceHandler("md",
-                             {isTemplate:true},
+                             {isTemplate: true, archMatching: 'web'},
                              function (compileStep) {
 
 
-  if (! compileStep.archMatches('browser')) {
-    // XXX in the future, might be better to emit some kind of a
-    // warning if a stylesheet is included on the server, rather than
-    // silently ignoring it. but that would mean you can't stick .css
-    // at the top level of your app, which is kind of silly.
-    return;
-  }
   var path_part = path.dirname(compileStep.inputPath);
   if (path_part === '.')
     path_part = '';
@@ -22,12 +15,13 @@ Plugin.registerSourceHandler("md",
     path_part = path_part + path.sep;
   var ext = path.extname(compileStep.inputPath);
   var basename = path.basename(compileStep.inputPath, ext);
+  console.log('\n' + basename + '\n');
   var source = compileStep.read().toString('utf8');
 
   try {
     contents = marked(source);
 
-    var renderFuncCode = Spacebars.compile(
+    var renderFuncCode = SpacebarsCompiler.compile(
       contents, {
       isTemplate: true,
       sourceName: 'Template "' + basename + '"'
