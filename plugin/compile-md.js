@@ -15,7 +15,6 @@ Plugin.registerSourceHandler("md",
     path_part = path_part + path.sep;
   var ext = path.extname(compileStep.inputPath);
   var basename = path.basename(compileStep.inputPath, ext);
-  console.log('\n' + basename + '\n');
   var source = compileStep.read().toString('utf8');
 
   try {
